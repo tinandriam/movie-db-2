@@ -91,3 +91,6 @@ iOSInjectionProject/
 
 # Private constants file
 Constants.swift
+
+# Generated
+*.DS_Store
