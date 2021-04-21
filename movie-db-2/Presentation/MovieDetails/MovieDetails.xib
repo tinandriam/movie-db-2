@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieDetails" customModule="movie_db_2" customModuleProvider="target">
+            <connections>
+                <outlet property="titleLabel" destination="yMP-WO-jem" id="bU2-aQ-2Ku"/>
+                <outlet property="view" destination="dfR-D0-yJk" id="j04-Za-CFb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <window contentMode="scaleToFill" resizesToFullScreen="NO" id="nIg-uA-4yx">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dfR-D0-yJk">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMP-WO-jem">
+                            <rect key="frame" x="186" y="437.5" width="42" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="O00-T4-c7k"/>
+            <constraints>
+                <constraint firstItem="dfR-D0-yJk" firstAttribute="top" secondItem="nIg-uA-4yx" secondAttribute="top" id="SXR-xl-636"/>
+                <constraint firstItem="dfR-D0-yJk" firstAttribute="centerX" secondItem="nIg-uA-4yx" secondAttribute="centerX" id="Y8O-6o-kcx"/>
+                <constraint firstItem="dfR-D0-yJk" firstAttribute="leading" secondItem="O00-T4-c7k" secondAttribute="leading" id="sCp-pQ-NKj"/>
+                <constraint firstItem="dfR-D0-yJk" firstAttribute="centerY" secondItem="nIg-uA-4yx" secondAttribute="centerY" id="yFz-WD-hdF"/>
+            </constraints>
+            <point key="canvasLocation" x="-1936.2318840579712" y="115.84821428571428"/>
+        </window>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

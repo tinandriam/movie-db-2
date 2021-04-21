@@ -8,25 +8,33 @@
 import Foundation
 import Combine
 
+protocol MoviesViewModelDelegate {
+    func onFetchSuccess(_ newIndexPathsToReload: [IndexPath]?)
+}
+
 class MoviesViewModel {
 
     // MARK: - Parameters
 
-    var movies = CurrentValueSubject<[Movie]?, Never>(nil)
+    var movies = CurrentValueSubject<[Movie]?, Never>([])
     var genresRepresentation = CurrentValueSubject<GenresListRepresentation?, Never>(nil)
     let client = MovieClient()
     let movieRepository = MovieRepository()
-    var configurations = CurrentValueSubject<ConfigurationRepresentation?, Never>(nil)
+    var configuration = CurrentValueSubject<ConfigurationRepresentation?, Never>(nil)
+
+    var isFetchInProgress: Bool = false
+    var currentPage: Int = 1
+    var delegate: MoviesViewModelDelegate? = nil
+    var totalMovies: Int = 0
     var bag: Set<AnyCancellable> = []
-
-    // MARK: - Initializer
-
-    init() {}
 
     // MARK: - Functions
 
     func setupMovies(configuration: ConfigurationRepresentation) {
-        setupGenres()
+
+        if genresRepresentation.value == nil {
+            setupGenres()
+        }
 
         genresRepresentation.sink(receiveValue: { genres in
             if let genres = genres {
@@ -55,15 +63,19 @@ class MoviesViewModel {
             case .success(let configurationRepresentation):
                 print(configurationRepresentation)
                 self.setupMovies(configuration: configurationRepresentation)
-//                self.configurations.value = configurationRepresentation
+                self.configuration.value = configurationRepresentation
             }
         })
     }
 
     func fetchMovies(genres: GenresListRepresentation, config: ConfigurationRepresentation) {
-        let page = 1
+        guard isFetchInProgress == false else {
+            return
+        }
 
-        client.fetchMoviesbyTrend(page: page)
+        isFetchInProgress = true
+
+        client.fetchMoviesbyTrend(page: currentPage)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -76,13 +88,34 @@ class MoviesViewModel {
                     case .wrongApiKey:
                         print("wring api key")
                     }
+                    self.isFetchInProgress = false
                 case .finished:
-                    break
+                    self.isFetchInProgress = false
                 }
             }, receiveValue: { moviesRepresentation in
-                self.movies.value = self.movieRepository.setupMovies(moviesRepresentation: moviesRepresentation, genresRepresentation: genres, configuration: config)
-//                print(self.movies.value)
+                let newMovies = self.movieRepository.setupMovies(moviesRepresentation: moviesRepresentation, genresRepresentation: genres, configuration: config)
+                self.movies.value?.append(contentsOf: newMovies)
+                self.currentPage += 1
+                self.isFetchInProgress = false
+                self.totalMovies = moviesRepresentation.totalResults
+
+                if moviesRepresentation.page > 1 {
+                    let indexPathsToReload = self.calculateIndexPathsToReload(from: newMovies)
+                    self.delegate?.onFetchSuccess(indexPathsToReload)
+                  } else {
+                    self.delegate?.onFetchSuccess(.none)
+                  }
             }).store(in: &bag)
 
+    }
+
+    private func calculateIndexPathsToReload(from newMovies: [Movie]) -> [IndexPath] {
+        guard let movies = movies.value else {
+            return []
+        }
+
+        let startIndex = movies.count - newMovies.count
+        let endIndex = startIndex + newMovies.count
+        return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
     }
 }

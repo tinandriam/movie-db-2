@@ -61,17 +61,23 @@
                         </stackView>
                     </subviews>
                 </stackView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="RSI-iJ-Gpd">
+                    <rect key="frame" x="346.5" y="98" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="PGI-jy-yw1"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="PGI-jy-yw1" firstAttribute="trailing" secondItem="MRi-o5-Cxh" secondAttribute="trailing" constant="16" id="6n2-ql-CMt" userLabel="Safe Area.trailing = Stack View.trailing"/>
+                <constraint firstItem="RSI-iJ-Gpd" firstAttribute="centerY" secondItem="FWg-Wp-vSv" secondAttribute="centerY" id="KVN-wf-zRn"/>
                 <constraint firstItem="MRi-o5-Cxh" firstAttribute="centerY" secondItem="FWg-Wp-vSv" secondAttribute="centerY" id="Mip-I1-B84"/>
+                <constraint firstItem="RSI-iJ-Gpd" firstAttribute="centerX" secondItem="FWg-Wp-vSv" secondAttribute="centerX" id="QHe-KP-EtS"/>
                 <constraint firstItem="MRi-o5-Cxh" firstAttribute="leading" secondItem="PGI-jy-yw1" secondAttribute="leading" constant="16" id="dTE-ne-8RX" userLabel="Stack View.leading = Safe Area.leading"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="adultContentMarker" destination="enm-R6-TYg" id="RwT-C7-86x"/>
+                <outlet property="loadingIndicator" destination="RSI-iJ-Gpd" id="L9r-LU-zVt"/>
                 <outlet property="overviewLabel" destination="rVL-Y7-Gxp" id="nd6-ff-9AQ"/>
                 <outlet property="posterImage" destination="4EL-C3-9Pl" id="9Wt-f6-AtD"/>
                 <outlet property="titleLabel" destination="ZAn-hO-iJt" id="J55-yI-ejp"/>
