@@ -15,7 +15,6 @@ class MovieCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var adultContentMarker: UIImageView!
     @IBOutlet weak var posterImage: UIImageView!
-    @IBOutlet weak var voteAverageLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 }

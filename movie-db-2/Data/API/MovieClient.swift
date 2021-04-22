@@ -63,7 +63,6 @@ class MovieClient {
                 return promise(.failure(.networkError))
             }
 
-//            print(url)
             AF.request(url, method: .get)
                 .validate()
                 .responseDecodable(of: MoviesRepresentation.self,

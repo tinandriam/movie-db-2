@@ -36,12 +36,10 @@ struct Movie {
         // Setup poster Url
         if let posterPath = representation.posterPath, let url = URL(string: configuration.secureBaseUrl + configuration.posterSize[3] + posterPath
            ) {
-            print(url)
             self.posterUrl = url
         } else {
             self.posterUrl = nil
         }
-
 
         // Setup genres
         self.genres = [:]

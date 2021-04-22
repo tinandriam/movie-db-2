@@ -8,7 +8,7 @@
 import Foundation
 
 enum TmdbApiError: Error {
-    case notFound, wrongApiKey, networkError
+    case notFound, wrongApiKey, networkError, processOnGoing, error(Error)
 }
 
 struct TmdbApiErrorRepresentation: Codable {

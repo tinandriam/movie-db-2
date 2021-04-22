@@ -25,7 +25,7 @@
                             </constraints>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8rO-gp-8Dn">
-                            <rect key="frame" x="116" y="0.0" width="565" height="78"/>
+                            <rect key="frame" x="116" y="0.0" width="565" height="18"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="92h-9j-Rqf">
                                     <rect key="frame" x="0.0" y="0.0" width="46" height="8"/>
@@ -45,14 +45,8 @@
                                         </imageView>
                                     </subviews>
                                 </stackView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVN-pZ-i6i" userLabel="Vote Average">
-                                    <rect key="frame" x="0.0" y="18" width="50" height="50"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVL-Y7-Gxp" userLabel="Overview">
-                                    <rect key="frame" x="0.0" y="78" width="0.0" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="18" width="0.0" height="0.0"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -81,7 +75,6 @@
                 <outlet property="overviewLabel" destination="rVL-Y7-Gxp" id="nd6-ff-9AQ"/>
                 <outlet property="posterImage" destination="4EL-C3-9Pl" id="9Wt-f6-AtD"/>
                 <outlet property="titleLabel" destination="ZAn-hO-iJt" id="J55-yI-ejp"/>
-                <outlet property="voteAverageLabel" destination="LVN-pZ-i6i" id="8vd-6O-s7g"/>
             </connections>
             <point key="canvasLocation" x="-1192.0289855072465" y="-160.71428571428569"/>
         </view>

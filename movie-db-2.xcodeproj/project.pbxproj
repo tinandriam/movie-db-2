@@ -26,10 +26,8 @@
 		266B1CB5262DCA12002C395D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B1CB4262DCA12002C395D /* Constants.swift */; };
 		266B1CC0262DD7B8002C395D /* UrlPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B1CBF262DD7B8002C395D /* UrlPath.swift */; };
 		266B1CD0262EFC22002C395D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 266B1CCF262EFC22002C395D /* Alamofire */; };
-		26E572C72630203D0094F6BB /* SetupMoviesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E572C62630203D0094F6BB /* SetupMoviesList.swift */; };
 		26E572CD263032950094F6BB /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E572CC263032950094F6BB /* MovieRepository.swift */; };
 		26E572D2263073E30094F6BB /* ConfigurationRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E572D1263073E30094F6BB /* ConfigurationRepresentation.swift */; };
-		26E572D7263076690094F6BB /* ConfigurationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E572D6263076690094F6BB /* ConfigurationRepository.swift */; };
 		26E572DC2630767A0094F6BB /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E572DB2630767A0094F6BB /* Configuration.swift */; };
 		26E572E2263087BA0094F6BB /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 26E572E1263087BA0094F6BB /* SDWebImage */; };
 		26E572ED263094120094F6BB /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E572EC263094120094F6BB /* MovieDetails.swift */; };
@@ -78,10 +76,8 @@
 		266B1CA4262DC977002C395D /* MovieClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieClient.swift; path = "movie-db-2/Data/API/MovieClient.swift"; sourceTree = SOURCE_ROOT; };
 		266B1CB4262DCA12002C395D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		266B1CBF262DD7B8002C395D /* UrlPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlPath.swift; sourceTree = "<group>"; };
-		26E572C62630203D0094F6BB /* SetupMoviesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupMoviesList.swift; sourceTree = "<group>"; };
 		26E572CC263032950094F6BB /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
 		26E572D1263073E30094F6BB /* ConfigurationRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationRepresentation.swift; sourceTree = "<group>"; };
-		26E572D6263076690094F6BB /* ConfigurationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationRepository.swift; sourceTree = "<group>"; };
 		26E572DB2630767A0094F6BB /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		26E572EC263094120094F6BB /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,7 +112,6 @@
 		26312795262F5B74000524D4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				263127B6262F61C0000524D4 /* UseCases */,
 				26312796262F5B7A000524D4 /* Models */,
 			);
 			path = Domain;
@@ -141,14 +136,6 @@
 				26E572D1263073E30094F6BB /* ConfigurationRepresentation.swift */,
 			);
 			path = Representations;
-			sourceTree = "<group>";
-		};
-		263127B6262F61C0000524D4 /* UseCases */ = {
-			isa = PBXGroup;
-			children = (
-				26E572C62630203D0094F6BB /* SetupMoviesList.swift */,
-			);
-			path = UseCases;
 			sourceTree = "<group>";
 		};
 		263127BF262F7E33000524D4 /* Presentation */ = {
@@ -256,7 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				26E572CC263032950094F6BB /* MovieRepository.swift */,
-				26E572D6263076690094F6BB /* ConfigurationRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -418,14 +404,12 @@
 				26E572D2263073E30094F6BB /* ConfigurationRepresentation.swift in Sources */,
 				266B1C6F262DC8EA002C395D /* ViewController.swift in Sources */,
 				266B1C6B262DC8EA002C395D /* AppDelegate.swift in Sources */,
-				26E572C72630203D0094F6BB /* SetupMoviesList.swift in Sources */,
 				266B1CA5262DC977002C395D /* MovieClient.swift in Sources */,
 				263127C7262F7EC3000524D4 /* MoviesViewModel.swift in Sources */,
 				26312798262F5B8A000524D4 /* Movie.swift in Sources */,
 				263127A0262F5D54000524D4 /* Genres.swift in Sources */,
 				2631278E262F4999000524D4 /* MoviesRepresentation.swift in Sources */,
 				266B1C6D262DC8EA002C395D /* SceneDelegate.swift in Sources */,
-				26E572D7263076690094F6BB /* ConfigurationRepository.swift in Sources */,
 				266B1CB5262DCA12002C395D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

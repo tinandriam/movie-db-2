@@ -13,8 +13,6 @@ import Foundation
 
 class MovieRepository {
 
-    
-
     func setupMovies(moviesRepresentation: MoviesRepresentation, genresRepresentation: GenresListRepresentation, configuration: ConfigurationRepresentation) -> [Movie] {
 
         let genres = Genres(representation: genresRepresentation).genres
@@ -26,7 +24,6 @@ class MovieRepository {
         for movie in moviesRepresentation.results {
             movies.append(Movie(representation: movie, genres: genres, configuration: configuration))
         }
-//        print(movies)
         return movies
     }
 }
